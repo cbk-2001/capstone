@@ -1,0 +1,7 @@
+{
+	"name": "AzureDataLakeStorage950",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/8d70b7b4-d2e4-4262-bb0f-0b4608c1a795/resourceGroups/rg-unitycatalog-eastus2/providers/Microsoft.Storage/storageAccounts/storageunitycatalogus2",
+		"groupId": "dfs"
+	}
+}

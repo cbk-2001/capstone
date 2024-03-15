@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "copyactivity_GitToADLS",
 	"properties": {
 		"activities": [
 			{
@@ -105,13 +105,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText1",
+						"referenceName": "source2",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText2",
+						"referenceName": "sink1",
 						"type": "DatasetReference"
 					}
 				]

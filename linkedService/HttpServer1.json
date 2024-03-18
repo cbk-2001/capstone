@@ -5,11 +5,11 @@
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://raw.githubusercontent.com",
+			"url": "https://raw.githubusercontent.com/cbk-2001/capstone/main",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Basic",
 			"userName": "cbk-2001",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQENDMzE5QkRFLTJCNDEtNDMzMy05MENCLUZFRjQxMzgwMzE4N19lM2ZjNGVkOC1kYjY4LTQwOWItYTljMC1kYWZjZWFlY2IxMmUiDQp9"
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQENDMzE5QkRFLTJCNDEtNDMzMy05MENCLUZFRjQxMzgwMzE4N18zM2IyNTQ3Zi1kZTFlLTRiNmUtYTI2OC1mN2Y5N2QyODc0ZGQiDQp9"
 		},
 		"connectVia": {
 			"referenceName": "AutoResolveIntegrationRuntime",

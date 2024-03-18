@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "/cbk-2001/capstone/main/SharkTankUSDealsData.csv"
+				"relativeUrl": "/cbk-2001/capstone/main/SharkTankUSPitchNumber.csv"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

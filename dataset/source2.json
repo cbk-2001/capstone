@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "SharkTankUSDealsData.csv"
+				"relativeUrl": "/SharkTankUSDealsData.csv"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

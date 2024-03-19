@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "SharkTankUSPitchNumber.csv",
+				"fileName": "*",
 				"folderPath": "chaicapstone/RAW",
 				"fileSystem": "uc-metastore-eastus2"
 			},

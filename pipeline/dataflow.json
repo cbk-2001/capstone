@@ -1,5 +1,5 @@
 {
-	"name": "copydata_git_to_adls",
+	"name": "dataflow",
 	"properties": {
 		"activities": [
 			{
@@ -58,6 +58,87 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "raw_to_bronze",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "git_to_raw",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/chaithanya.krishna@fractal.ai/BRONZE_Shark Tank"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "bronze_to_silver",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "raw_to_bronze",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/chaithanya.krishna@fractal.ai/SILVER_SharkTank_Pitch_Complete_Data"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "silver_to_gold",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "bronze_to_silver",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/chaithanya.krishna@fractal.ai/GOLD_SharkTank_Pitch_KPI_Data"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []

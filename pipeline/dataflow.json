@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "git_to_raw",
+				"name": "git_to_raw2",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -54,7 +54,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "sink1",
+						"referenceName": "sink2",
 						"type": "DatasetReference"
 					}
 				]
@@ -64,7 +64,13 @@
 				"type": "DatabricksNotebook",
 				"dependsOn": [
 					{
-						"activity": "git_to_raw",
+						"activity": "git_to_raw2",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "git_to_raw1",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -139,6 +145,63 @@
 					"referenceName": "AzureDatabricks1",
 					"type": "LinkedServiceReference"
 				}
+			},
+			{
+				"name": "git_to_raw1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "source1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sink1",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []

@@ -1,0 +1,169 @@
+{
+	"name": "sink1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "SharkTankUSDealsData.csv",
+				"folderPath": "chaicapstone/RAW",
+				"fileSystem": "uc-metastore-eastus2"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Season Number",
+				"type": "String"
+			},
+			{
+				"name": "Episode Number",
+				"type": "String"
+			},
+			{
+				"name": "Startup Name",
+				"type": "String"
+			},
+			{
+				"name": "Industry",
+				"type": "String"
+			},
+			{
+				"name": "Business Description",
+				"type": "String"
+			},
+			{
+				"name": "Pitchers Gender",
+				"type": "String"
+			},
+			{
+				"name": "Pitchers State",
+				"type": "String"
+			},
+			{
+				"name": "Pitchers City",
+				"type": "String"
+			},
+			{
+				"name": "Entrepreneur Names",
+				"type": "String"
+			},
+			{
+				"name": "Company Website",
+				"type": "String"
+			},
+			{
+				"name": "Multiple Entrepreneurs",
+				"type": "String"
+			},
+			{
+				"name": "Original Ask Amount",
+				"type": "String"
+			},
+			{
+				"name": "Original Offered Equity",
+				"type": "String"
+			},
+			{
+				"name": "Valuation Requested",
+				"type": "String"
+			},
+			{
+				"name": "Total Deal Amount",
+				"type": "String"
+			},
+			{
+				"name": "Total Deal Equity",
+				"type": "String"
+			},
+			{
+				"name": "Deal Valuation",
+				"type": "String"
+			},
+			{
+				"name": "Number of sharks in deal",
+				"type": "String"
+			},
+			{
+				"name": "Investment Amount Per Shark",
+				"type": "String"
+			},
+			{
+				"name": "Royalty Deal",
+				"type": "String"
+			},
+			{
+				"name": "Barbara Corcoran Investment Amount",
+				"type": "String"
+			},
+			{
+				"name": "Mark Cuban Investment Amount",
+				"type": "String"
+			},
+			{
+				"name": "Lori Greiner Investment Amount",
+				"type": "String"
+			},
+			{
+				"name": "Robert Herjavec Investment Amount",
+				"type": "String"
+			},
+			{
+				"name": "Daymond John Investment Amount",
+				"type": "String"
+			},
+			{
+				"name": "Kevin O Leary Investment Amount",
+				"type": "String"
+			},
+			{
+				"name": "Guest Investment Amount",
+				"type": "String"
+			},
+			{
+				"name": "BarbaraCorcoran Present",
+				"type": "String"
+			},
+			{
+				"name": "MarkCuban Present",
+				"type": "String"
+			},
+			{
+				"name": "LoriGreiner Present",
+				"type": "String"
+			},
+			{
+				"name": "RobertHerjavec Present",
+				"type": "String"
+			},
+			{
+				"name": "DaymondJohn Present",
+				"type": "String"
+			},
+			{
+				"name": "KevinOLeary Present",
+				"type": "String"
+			},
+			{
+				"name": "KevinHarrington Present",
+				"type": "String"
+			},
+			{
+				"name": "Guest Name",
+				"type": "String"
+			},
+			{
+				"name": "Notes",
+				"type": "String"
+			}
+		]
+	}
+}
